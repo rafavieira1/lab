@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "labrna"
-version = "0.250411.0"
-description = "Prática em redes neurais artificiais"
+name = "algoritmos-de-aprendizado-lab"
+version = "0.250814.0"
+description = "Prática em algoritmos de busca e aprendizado"
 authors = ["davips <davip@utfpr.edu.br>"]
 license = "GPLv3"
 readme = 'README.md'
 packages = [
-    { include = "labrna", from = "src" }
+    { include = "lab", from = "src" }
 ]
 
 [tool.poetry.dependencies]
