@@ -1,2 +1,2 @@
-# labrna
-Laboratório de implementação de redes neurais artificiais.
+# lab
+Laboratório de implementação de algoritmos de busca e aprendizado.
