@@ -24,6 +24,11 @@ dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
 # Define a simple autoencoder
 class Autoencoder(nn.Module):
+    """
+    A simple autoencoder model with an encoder and decoder.
+    >>> a = Autoencoder()
+    >>> print(a)
+    """
     def __init__(self):
         super(Autoencoder, self).__init__()
         self.encoder = nn.Sequential(
@@ -73,6 +78,12 @@ with torch.no_grad():
     encoded_imgs, _ = model(X_tensor)
     embeddings = encoded_imgs.numpy()
 
+plt.figure(figsize=(10, 8))
+plt.scatter(embeddings[:, 0], embeddings[:, 1], c=y, cmap='tab10', alpha=0.6)
+plt.colorbar(label='Digit Class')
+plt.title('Autoencoder 2D Embedding of MNIST Sample')
+plt.show()
+
 # Plot the results
 pca = PCA()
 embeddings = pca.fit_transform(X_scaled)
@@ -81,12 +92,6 @@ plt.figure(figsize=(10, 8))
 plt.scatter(embeddings[:, 0], embeddings[:, 1], c=y, cmap='tab10', alpha=0.6)
 plt.colorbar(label='Digit Class')
 plt.title('PCA 2D Embedding of MNIST Sample')
-plt.show()
-
-plt.figure(figsize=(10, 8))
-plt.scatter(embeddings[:, 0], embeddings[:, 1], c=y, cmap='tab10', alpha=0.6)
-plt.colorbar(label='Digit Class')
-plt.title('Autoencoder 2D Embedding of MNIST Sample')
 plt.show()
 
 tsne = TSNE()
